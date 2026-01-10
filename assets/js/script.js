@@ -246,12 +246,12 @@ ScrollReveal().reveal('.education .box', { interval: 200 });
 ScrollReveal().reveal('.work .box', { interval: 200 });
 
 /* SCROLL EXPERIENCE */
-ScrollReveal().reveal('.experience .timeline', { delay: 400 , reset: false});
-ScrollReveal().reveal('.experience .timeline .container', { interval: 400, reset: false });
+ScrollReveal().reveal('.experience .timeline', { delay: 400 , reset: true});
+ScrollReveal().reveal('.experience .timeline .container', { interval: 400, reset: true });
 
 /* SCROLL CONTACT */
-ScrollReveal().reveal('.contact .container', { delay: 400, reset: false });
-ScrollReveal().reveal('.contact .container .form-group', { delay: 400, reset: false });
+ScrollReveal().reveal('.contact .container', { delay: 400, reset: true });
+ScrollReveal().reveal('.contact .container .form-group', { delay: 400, reset: true });
 
 const ctx = document.getElementById('skillsChart').getContext('2d');
 const chart = new Chart(ctx, {
