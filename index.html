@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords"
+    content="dev, portfolio, full stack dev, personal portfolio lifecodes, portfolio design, portfolio website, personal portfolio" />
+  <meta name="description" content="Welcome to Patrick Portfolio. Full-Stack Web Developer and UI/UX Developer" />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+  <!-- Font Awesome -->
+   
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Favicon -->
+  <link id='favicon' rel="shortcut icon" href="./assets/images/dev.jpeg" type="image/x-png">
+  <title>Portfolio | Patrick</title>
+</head>
+
+<body oncontextmenu="return false">
+
+  <!-- pre loader -->
+  <!-- <div class="loader-container">
+  <img draggable="false" src="./assets/images/preloader.gif" alt="">
+</div> -->
+
+  <!-- navbar starts -->
+  <header>
+    <a href="/" class="logo"><i class="fab fa-react"></i> Patrick RALALANIRINA</a>
+
+    <div id="menu" class="fas fa-bars"></div>
+    <nav class="navbar">
+      <ul>
+        <li><a class="active" href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <!-- navbar ends -->
+
+
+  <!-- hero section starts -->
+  <section class="home" id="home">
+    <!--div id="particles-js"></div-->
+
+    <div class="content">
+      <h2>Hi There👋👋,<br /> bienvenu<span> dans mon portfolio</span></h2>
+      <p>I'm a <span class="typing-text"></span></p>
+      <a href="#about" class="btn"><span>About Me</span>
+        <i class="fas fa-arrow-circle-down"></i>
+      </a>
+      <div class="socials">
+        <ul class="social-icons">
+          <li><a class="linkedin" aria-label="LinkedIn" href="https://www.linkedin.com/in/patrick-ralalanirina/"
+              target="_blank"><i class="fab fa-linkedin"></i></a></li>
+          <li><a class="github" aria-label="GitHub" href="https://github.com/Patrick52177" target="_blank"><i
+                class="fab fa-github"></i></a></li>
+          <li><a class="instagram" aria-label="Instagram" href="https://www.instagram.com/patrick.ralnir/"><i
+                class="fab fa-instagram" target="_blank"></i></a></li>
+          <li><a class="facebook" aria-label="facebook" href="https://www.facebook.com/Patrick.ralalanirina?locale=fr_FR"><i
+                class="fab fa-facebook" target="_blank"></i></a></li>
+      
+        </ul>
+      </div>
+    </div>
+    <div class="image">
+      <img draggable="false" class="tilt" src="./assets/images/code.jpg" alt="">
+    </div>
+  </section>
+  <!-- hero section ends -->
+
+
+  <!-- about section starts -->
+  <section class="about" id="about">
+    <h2 class="heading"><i class="fas fa-user-alt"></i> About <span style="color:rgb(24, 37, 218);">Me</span></h2>
+
+    <div class="row">
+
+      <div class="image">
+        <img draggable="false" class="tilt" src="./assets/images/dev.png" alt="">
+      </div>
+      <div class="content">
+        <h3>Patrick RALALANIRINA</h3>
+        <span class="tag">Full Stack Developer</span>
+
+        <p>Développeur full-stack junior passionné par les systèmes embarqués, 
+          je cherche à intégrer une équipe dynamique pour mettre en pratique mes compétences en programmation. 
+          Mon objectif est de contribuer à des projets innovants tout en approfondissant mes connaissances en Iot
+           et développement web </p>
+
+        <div class="box-container">
+          <div class="box">
+            <p><span> age: </span> 22</p>
+            <p><span> phone : </span> +261 34 20 323 56</p>
+ 
+            <p><span> email : </span> patrickralalanirina521@gmail.com</p>
+            <p><span> place : </span> III S 353 A Madera Namontana</p>
+          </div>
+        </div>
+
+        <div class="resumebtn">
+          <a href="assets/DevFolio.pdf" class="btn"><span>Resume</span>
+            <i class="fas fa-chevron-right"></i>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- about section ends -->
+
+  <!-- skills section starts -->
+  <section class="skills" id="skills">
+
+    <h2 class="heading"><i class="fas fa-laptop-code"></i> Skills & <span>Abilities</span></h2>
+    <div class="container">
+      <div class="row" id="skillsContainer">
+
+
+      </div>
+    </div>
+    <center>
+     <canvas id="skillsChart"></canvas>
+    </center>
+  </section>
+  <!-- skills section ends -->
+
+
+  <!-- education section starts -->
+  <section class="education" id="education">
+
+    <h1 class="heading"><i class="fas fa-graduation-cap"></i> My <span>Education</span></h1>
+
+    <p class="qoute">Education is not the learning of facts, but the training of the mind to think.</p>
+
+    <div class="box-container">
+
+      <div class="box">
+        <div class="image">
+          <img draggable="false" src="./assets/images/Univ.jpg" alt="">
+        </div>
+        <div class="content">
+          <h3>Licence d’Ingénierie en Physique des Signaux et Systèmes</h3>
+          <p>Univérsité d'Antananarivo</p>
+          <h4>2022-2025 | Pursuing</h4>
+        </div>
+      </div>
+
+      <div class="box">
+        <div class="image">
+          <img draggable="false" src="./assets/images/college.jpg" alt="">
+        </div>
+        <div class="content">
+          <h3>Baccalauréat Série D</h3>
+          <p>Lycée Moderne Ampefiloha</p>
+          <h4>2017-2020 | Completed</h4>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <!-- education section ends -->
+
+
+  <!-- work project section starts -->
+  <section class="experience" id="experience">
+
+  <h2 class="heading">
+    <i class="fas fa-laptop-code"></i> Projets
+  </h2>
+
+  <div class="timeline">
+
+    <!-- Projet bancaire -->
+    <div class="container left">
+      <div class="content">
+        <div class="tag">
+          <h2>Application de gestion</h2>
+        </div>
+        <div class="desc">
+          <h3>ASP.NET Core • Oracle</h3>
+          <p>
+            Application de simulation et d’analyse de crédits bancaires avec
+            indicateurs de rentabilité et tableaux de bord.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Agence de voyage -->
+    <div class="container right">
+      <div class="content">
+        <div class="tag">
+          <h2>Agence de voyage</h2>
+        </div>
+        <div class="desc">
+          <h3>Next.js • NestJS • MySQL</h3>
+          <p>
+            Application web pour la gestion des circuits touristiques,
+            réservations et demandes clients.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Distributeur automatique -->
+    <div class="container left">
+      <div class="content">
+        <div class="tag">
+          <h2>Distributeur automatique de boisson</h2>
+        </div>
+        <div class="desc">
+          <h3>Arduino • LCD • Capteurs</h3>
+          <p>
+            Système embarqué simulant la distribution de boissons avec menu LCD,
+            boutons de navigation et capteur à ultrasons.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Maison intelligente -->
+    <div class="container right">
+      <div class="content">
+        <div class="tag">
+          <h2>Maison intelligente</h2>
+        </div>
+        <div class="desc">
+          <h3>Arduino • IoT</h3>
+          <p>
+            Système de contrôle intelligent pour l’éclairage et les équipements
+            domestiques à l’aide de capteurs et d’automatisation.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Portfolio -->
+    <div class="container left">
+      <div class="content">
+        <div class="tag">
+          <h2>Portfolio personnel</h2>
+        </div>
+        <div class="desc">
+          <h3>HTML • CSS • JavaScript</h3>
+          <p>
+            Portfolio responsive présentant mes compétences, projets et
+            expériences professionnelles.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+
+      <!-- <div class="box tilt">
+      <img draggable="false" src="./assets/images/projects/portfolio1.PNG" alt="" />
+      <div class="content">
+        <div class="tag">
+        <h3>Portfolio Website</h3>
+        </div>
+        <div class="desc">
+          <p>Personal portfolio website. Don't need much info about it, just scroll down. You're here only!</p>
+          <div class="btns">
+            <a href="#" class="btn" target="_blank"><i class="fas fa-eye"></i> View</a>
+            <a href="https://github.com/jigar-sable/Portfolio-Website" class="btn" target="_blank">Code <i class="fas fa-code"></i></a>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    </div>
+
+    <!-- div class="viewall">
+      <a href="./projects/index.html" class="btn"><span>View All</span>
+        <i class="fas fa-arrow-right"></i>
+      </a>
+    </div -->
+
+  </section>
+  <!-- work project section ends -->
+
+  <!-- experience section starts -->
+  <section class="experience" id="experience">
+
+  <h2 class="heading">
+    <i class="fas fa-briefcase"></i> Expérience
+  </h2>
+
+  <div class="timeline">
+
+    <!-- Caisse d'Épargne de Madagascar -->
+    <div class="container right">
+      <div class="content">
+        <div class="tag">
+          <h2>Caisse d’Épargne de Madagascar</h2>
+        </div>
+        <div class="desc">
+          <h3>Développeur .NET / Oracle</h3>
+          <p>2025</p>
+          <small>
+            Contribution au développement d’une application bancaire interne :
+            simulation et analyse de crédits, tableaux de bord et indicateurs
+            de rentabilité.
+          </small>
+        </div>
+      </div>
+    </div>
+
+    <!-- Agence de voyage -->
+    <div class="container left">
+      <div class="content">
+        <div class="tag">
+          <h2>Agence de Voyage</h2>
+        </div>
+        <div class="desc">
+          <h3>Développeur Web Full Stack</h3>
+          <p>2024 – 2025</p>
+          <small>
+            Développement et maintenance d’une application web de gestion
+            de circuits, réservations et contacts clients.
+          </small>
+        </div>
+      </div>
+    </div>
+
+    <!-- Expérience générale -->
+    <div class="container right">
+      <div class="content">
+        <div class="tag">
+          <h2>Expérience en développement web</h2>
+        </div>
+        <div class="desc">
+          <h3>Développeur Full Stack Junior</h3>
+          <p>2023 – Présent</p>
+          <small>
+            Conception d’applications web modernes, intégration d’API,
+            gestion de bases de données et utilisation de Git.
+          </small>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+
+
+    <!-- div class="morebtn">
+      <a href="experience/index.html" class="btn"><span>View All</span>
+        <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+
+    </div -->
+
+  </section>
+  <!-- experience section ends -->
+
+  <!-- contact section starts -->
+  <section class="contact" id="contact">
+
+    <h2 class="heading"><i class="fas fa-headset"></i> Get in <span>Touch</span></h2>
+
+    <div class="container">
+      <div class="content">
+        <div class="image-box">
+          <img draggable="false" src="./assets/images/contact1.png" alt="">
+        </div>
+        <form id="contact-form">
+
+          <div class="form-group">
+            <div class="field">
+              <input type="text" name="name" placeholder="Name" required>
+              <i class='fas fa-user'></i>
+            </div>
+            <div class="field">
+              <input type="text" name="email" placeholder="Email" required>
+              <i class='fas fa-envelope'></i>
+            </div>
+            <div class="field">
+              <input type="text" name="phone" placeholder="Phone">
+              <i class='fas fa-phone-alt'></i>
+            </div>
+            <div class="message">
+              <textarea placeholder="Message" name="message" required></textarea>
+              <i class="fas fa-comment-dots"></i>
+            </div>
+          </div>
+          <div class="button-area">
+            <button type="submit">
+              Submit <i class="fa fa-paper-plane"></i></button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+  <!-- contact section ends -->
+
+
+  <!-- footer section starts -->
+  <section class="footer">
+
+    <div class="box-container">
+
+      <div class="box">
+        <h3>Dev's Portfolio</h3>
+        <p>Thank you for visiting my personal portfolio website. Connect with me over socials. <br /> <br /> Keep Rising
+          🚀. Connect with me over live chat!</p>
+      </div>
+
+      <div class="box">
+        <h3>quick links</h3>
+        <a href="#home"><i class="fas fa-chevron-circle-right"></i> home</a>
+        <a href="#about"><i class="fas fa-chevron-circle-right"></i> about</a>
+        <a href="#skills"><i class="fas fa-chevron-circle-right"></i> skills</a>
+        <a href="#education"><i class="fas fa-chevron-circle-right"></i> education</a>
+        <a href="#work"><i class="fas fa-chevron-circle-right"></i> work</a>
+        <a href="#experience"><i class="fas fa-chevron-circle-right"></i> experience</a>
+      </div>
+
+      <div class="box">
+        <h3>contact info</h3>
+        <p> <i class="fas fa-phone"></i> +261 34 20 323 56</p>
+        <p> <i class="fas fa-envelope"></i> patrickralalanirina521@gmail.com</p>
+        <p> <i class="fas fa-map-marked-alt"></i>III S 353 A Madera Namontana</p>
+        <div class="share">
+
+          <a href="https://www.linkedin.com/in/patrick-ralalanirina/" class="fab fa-linkedin" aria-label="LinkedIn"
+            target="_blank"></a>
+          <a href="https://github.com/Patrick52177" class="fab fa-github" aria-label="GitHub" target="_blank"></a>
+          <a href="mailto:patrickralalanirina521@gmail.com" class="fas fa-envelope" aria-label="Mail" target="_blank"></a>
+        </div>
+      </div>
+    </div>
+
+    <h1 class="credit">Designed with <i class="fa fa-heart pulse"></i> by <a href="https://github.com/Patrick52177">
+        Patrick</a></h1>
+
+  </section>
+  <!-- footer section ends -->
+
+
+  <!-- scroll top btn -->
+  <a href="#home" aria-label="ScrollTop" class="fas fa-angle-up" id="scroll-top"></a>
+  <!-- scroll back to top -->
+
+
+  <!-- ==== ALL MAJOR JAVASCRIPT CDNS STARTS ==== -->
+  <!-- jquery cdn -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <!-- typed.js cdn -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.5/typed.min.js"
+    integrity="sha512-1KbKusm/hAtkX5FScVR5G36wodIMnVd/aP04af06iyQTkD17szAMGNmxfNH+tEuFp3Og/P5G32L1qEC47CZbUQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <!-- particle.js links -->
+  <script src="./assets/js/particles.min.js"></script>
+  <script src="./assets/js/app.js"></script>
+
+  <!-- vanilla tilt.js links -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"
+    integrity="sha512-SttpKhJqONuBVxbRcuH0wezjuX+BoFoli0yPsnrAADcHsQMW8rkR84ItFHGIkPvhnlRnE2FaifDOUw+EltbuHg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <!-- scroll reveal anim -->
+  <script src="https://unpkg.com/scrollreveal"></script>
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+  <!-- ==== ALL MAJOR JAVASCRIPT CDNS ENDS ==== -->
+
+  <script src="./assets/js/script.js"></script>
+
+   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>    document.addEventListener('DOMContentLoaded', function() {
+      const ctx = document.getElementById('skillsChart');
+      new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+          labels: ['JavaScript', 'Java','C#', 'PHP', 'HTML/CSS', 'SCSS'],
+          datasets: [{
+            data: [39, 40, 35, 30, 26, 8],
+            backgroundColor: [
+               '#f1e05a', // JavaScript
+        '#b07219', // Java (couleur officielle)
+        '#178600', // C# (couleur GitHub)
+        '#4F5D95', // PHP (couleur officielle)
+        '#e34c26', // HTML/CSS
+        '#cc6699'  // SCSS
+            ]
+          }]
+        }
+      });
+    })</script>
+
+</body>
+
+</html>
