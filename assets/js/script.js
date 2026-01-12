@@ -211,7 +211,7 @@ const srtop = ScrollReveal({
     origin: 'top',
     distance: '80px',
     duration: 1000,
-    reset: true
+    reset: false
 });
 
 /* SCROLL HOME */
@@ -240,18 +240,18 @@ srtop.reveal('.skills .container', { interval: 200 });
 srtop.reveal('.skills .container .bar', { delay: 400 });
 
 /* SCROLL EDUCATION */
-ScrollReveal().reveal('.education .box', { interval: 200 });
+srtop.reveal('.education .box', { interval: 200 });
 
 /* SCROLL PROJECTS */
-ScrollReveal().reveal('.work .box', { interval: 200 });
+srtop.reveal('.work .box', { interval: 200 });
 
 /* SCROLL EXPERIENCE */
-ScrollReveal().reveal('.experience .timeline', { delay: 400 , reset: true});
-ScrollReveal().reveal('.experience .timeline .container', { interval: 400, reset: true });
+srtop.reveal('.experience .timeline', { delay: 400 });
+srtop.reveal('.experience .timeline .container', { interval: 400 });
 
 /* SCROLL CONTACT */
-ScrollReveal().reveal('.contact .container', { delay: 400, reset: true });
-ScrollReveal().reveal('.contact .container .form-group', { delay: 400, reset: true });
+srtop.reveal('.contact .container', { delay: 400 });
+srtop.reveal('.contact .container .form-group', { delay: 400 });
 
 const ctx = document.getElementById('skillsChart').getContext('2d');
 const chart = new Chart(ctx, {
