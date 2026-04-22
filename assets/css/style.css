@@ -1266,3 +1266,303 @@ form .button-area {
   width: 50% !important;
   height: 50% !important;
 }
+/* ==========================================================
+   PATCH — À COLLER À LA FIN DE style.css
+   Ces règles corrigent les conflits et ajoutent les améliorations
+   ========================================================== */
+
+/* -------------------------------------------------------
+   HERO — fond clair et lisible
+   ------------------------------------------------------- */
+
+/* Supprime le fond bleu cyan qui rendait les particles opaques */
+.home #particles-js {
+  background-color: transparent !important;
+  opacity: 0.8;
+}
+
+/* Fond hero : bleu nuit moyen, ni trop sombre ni trop saturé */
+.home {
+  background-image: none !important;
+  background: linear-gradient(135deg, #0d1b4b 0%, #102060 45%, #1a0a3d 100%) !important;
+  background-color: #0d1b4b !important;
+  overflow: hidden;
+}
+
+/* Titre principal — blanc pur et lisible */
+.home .content h2 {
+  color: #ffffff !important;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+  font-size: 4.8rem;
+  line-height: 1.25;
+}
+.home .content h2 span {
+  color: #f68c09 !important;
+  font-size: 4.8rem;
+}
+
+/* Sous-titre typed — bleu clair lisible */
+.home .content p {
+  color: #cfe0ff !important;
+  font-size: 2.3rem;
+}
+.home .content p span {
+  color: #ff9f55 !important;
+}
+
+/* Bouton hero — dégradé bleu/violet */
+.home .btn {
+  background: linear-gradient(135deg, #2756f5, #8b2be2) !important;
+  box-shadow: 0 6px 24px rgba(39, 86, 245, 0.55) !important;
+}
+.home .btn:hover {
+  background: linear-gradient(135deg, #1a3fd0, #6c1eb5) !important;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(39, 86, 245, 0.65) !important;
+}
+
+/* -------------------------------------------------------
+   IMAGE HERO — animation pulse + glow
+   ------------------------------------------------------- */
+@keyframes pulseRing {
+  0%   { box-shadow: 0 0 0 0 rgba(39,86,245,0.45), 0 0 28px rgba(39,86,245,0.3); }
+  70%  { box-shadow: 0 0 0 14px rgba(39,86,245,0), 0 0 28px rgba(39,86,245,0.3); }
+  100% { box-shadow: 0 0 0 0 rgba(39,86,245,0), 0 0 28px rgba(39,86,245,0.3); }
+}
+.home .image img {
+  border: 3px solid rgba(255, 255, 255, 0.18) !important;
+  animation: pulseRing 2.8s ease-out infinite;
+  transition: all 0.4s ease !important;
+}
+.home .image img:hover {
+  animation: none;
+  box-shadow: 0 0 50px rgba(246,140,9,0.5), 0 0 0 8px rgba(246,140,9,0.12) !important;
+  border-color: rgba(246,140,9,0.45) !important;
+}
+
+/* -------------------------------------------------------
+   SOCIAL ICONS — glassmorphism + hover coloré
+   ------------------------------------------------------- */
+.social-icons a {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  color: #cfe0ff !important;
+  backdrop-filter: blur(4px);
+}
+.social-icons a:hover {
+  transform: translateY(-5px);
+  border-color: transparent !important;
+  color: #fff !important;
+}
+.social-icons a.linkedin:hover  { background: #0077b5 !important; box-shadow: 0 8px 20px rgba(0,119,181,0.5); }
+.social-icons a.github:hover    { background: #24292e !important; box-shadow: 0 8px 20px rgba(36,41,46,0.5); }
+.social-icons a.instagram:hover { background: linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888) !important; box-shadow: 0 8px 20px rgba(220,39,67,0.5); }
+.social-icons a.facebook:hover  { background: #1877f2 !important; box-shadow: 0 8px 20px rgba(24,119,242,0.5); }
+
+/* -------------------------------------------------------
+   NAVBAR — backdrop blur + couleurs cohérentes
+   ------------------------------------------------------- */
+header {
+  background: rgba(5, 10, 35, 0.97) !important;
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+header .logo { color: #cfe0ff !important; }
+header .logo:hover { color: #f68c09 !important; }
+header .navbar ul li a { color: #9fb8e8 !important; }
+header .navbar ul li a.active,
+header .navbar ul li a:hover {
+  color: #f68c09 !important;
+  border-bottom-color: #f68c09 !important;
+}
+
+/* Mobile navbar */
+@media (max-width: 768px) {
+  #menu { color: #cfe0ff !important; }
+  header .navbar ul li a { color: #fff !important; }
+  header .navbar ul li a.active,
+  header .navbar ul li a:hover {
+    color: #f68c09 !important;
+    border-bottom-color: #f68c09 !important;
+  }
+}
+
+/* -------------------------------------------------------
+   ABOUT — badge pill + image hover
+   ------------------------------------------------------- */
+.about .row .content .tag {
+  display: inline-block !important;
+  background: linear-gradient(135deg, #2756f5, #8b2be2) !important;
+  color: #fff !important;
+  font-size: 1.25rem !important;
+  padding: 0.45rem 1.5rem !important;
+  border-radius: 3rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.05rem;
+  box-shadow: 0 0 18px rgba(139,43,226,0.45);
+  margin-top: 0.8rem;
+}
+
+.about .row .image img:hover {
+  mix-blend-mode: normal !important;
+  box-shadow: 0 10px 30px rgba(39,86,245,0.4) !important;
+}
+
+/* -------------------------------------------------------
+   SKILLS — barres + container
+   ------------------------------------------------------- */
+.skills .container {
+  background-image: none !important;
+  background-color: rgba(255, 255, 255, 0.06) !important;
+  border: 1px solid rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+}
+.skills .container .bar {
+  background-image: none !important;
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255,255,255,0.12);
+  transition: all 0.3s ease !important;
+}
+.skills .container .bar:hover {
+  background-color: rgba(39, 86, 245, 0.18) !important;
+  border-color: rgba(39, 86, 245, 0.45) !important;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(39,86,245,0.25) !important;
+}
+.skills .container .bar .info span {
+  color: #cfe0ff;
+}
+
+/* Chart centré et bien dimensionné */
+#skillsChart {
+  width: 380px !important;
+  height: 380px !important;
+  max-width: 90vw !important;
+  display: block;
+  margin: 2rem auto !important;
+}
+
+/* -------------------------------------------------------
+   EDUCATION — bordure + hover
+   ------------------------------------------------------- */
+.education .box-container .box {
+  border-left: 5px solid #2756f5 !important;
+  transition: all 0.3s ease !important;
+}
+.education .box-container .box:hover {
+  border-left-color: #f68c09 !important;
+  transform: translateX(6px) scale(1.01) !important;
+  box-shadow: 0 8px 30px rgba(39,86,245,0.2) !important;
+}
+
+/* -------------------------------------------------------
+   TIMELINE EXPÉRIENCE — line dégradée + hover card
+   ------------------------------------------------------- */
+.experience {
+  background: linear-gradient(160deg, #07051a 0%, #0e0d30 60%, #120820 100%) !important;
+}
+.experience .timeline::after {
+  background: linear-gradient(to bottom, #2756f5, #8b2be2) !important;
+}
+.experience .content {
+  background: linear-gradient(135deg, #f68c09, #d97500) !important;
+  box-shadow: 0 6px 20px rgba(246,140,9,0.3) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+.experience .container:hover .content {
+  transform: scale(1.02);
+  box-shadow: 0 10px 30px rgba(246,140,9,0.45) !important;
+}
+.experience .content .tag h2 { color: #fff; }
+.experience .content .desc small {
+  color: #1a0500;
+  font-family: "Nunito", sans-serif;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  display: block;
+  margin-top: 0.5rem;
+}
+
+/* -------------------------------------------------------
+   CONTACT — bouton + focus champs
+   ------------------------------------------------------- */
+.button-area button {
+  background: linear-gradient(135deg, #2756f5, #8b2be2) !important;
+  box-shadow: 0 5px 18px rgba(39,86,245,0.45) !important;
+  font-weight: 700;
+  transition: all 0.3s ease !important;
+}
+.button-area button:hover {
+  background: linear-gradient(135deg, #1a3fd0, #6c1eb5) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(39,86,245,0.6) !important;
+}
+.field input:focus,
+.message textarea:focus {
+  border-color: #2756f5 !important;
+}
+.field input:focus ~ i,
+.message textarea:focus ~ i {
+  color: #2756f5 !important;
+}
+.contact .container {
+  box-shadow: 0 8px 40px rgba(39,86,245,0.15) !important;
+  border: 1px solid rgba(39,86,245,0.1) !important;
+}
+
+/* -------------------------------------------------------
+   FOOTER — fond sombre unifié
+   ------------------------------------------------------- */
+.footer {
+  background-image: linear-gradient(160deg, #07051a, #12003a) !important;
+}
+.footer .box-container .box .share a {
+  background: rgba(255,255,255,0.12) !important;
+  color: #cfe0ff !important;
+  border: 1.5px solid rgba(255,255,255,0.15) !important;
+}
+.footer .box-container .box .share a:hover {
+  background: #f68c09 !important;
+  color: #fff !important;
+  border-color: transparent !important;
+}
+
+/* -------------------------------------------------------
+   SCROLL TOP — dégradé cohérent
+   ------------------------------------------------------- */
+#scroll-top {
+  background: linear-gradient(135deg, #2756f5, #8b2be2) !important;
+  color: #fff !important;
+  box-shadow: 0 4px 18px rgba(39,86,245,0.5);
+}
+#scroll-top:hover {
+  background: linear-gradient(135deg, #f68c09, #d97500) !important;
+}
+
+/* -------------------------------------------------------
+   SCROLLBAR — couleurs cohérentes
+   ------------------------------------------------------- */
+html::-webkit-scrollbar-track {
+  background: #0d1b4b !important;
+}
+html::-webkit-scrollbar-thumb {
+  background: linear-gradient(#2756f5, #8b2be2) !important;
+  border-radius: 4px;
+}
+
+/* -------------------------------------------------------
+   RESUME BUTTON
+   ------------------------------------------------------- */
+.resumebtn .btn {
+  background: linear-gradient(135deg, #2756f5, #8b2be2) !important;
+  box-shadow: 0 5px 18px rgba(39,86,245,0.45) !important;
+}
+.resumebtn .btn:hover {
+  background: linear-gradient(135deg, #1a3fd0, #6c1eb5) !important;
+  transform: translateY(-2px);
+}
+
+/* -------------------------------------------------------
+   TYPED CURSOR
+   ------------------------------------------------------- */
+.typed-cursor { color: #f68c09 !important; }

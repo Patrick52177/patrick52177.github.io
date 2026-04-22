@@ -5,33 +5,311 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="keywords"
-    content="dev, portfolio, full stack dev, personal portfolio lifecodes, portfolio design, portfolio website, personal portfolio" />
+  <meta name="keywords" content="dev, portfolio, full stack dev, personal portfolio" />
   <meta name="description" content="Welcome to Patrick Portfolio. Full-Stack Web Developer and UI/UX Developer" />
-  <!-- Custom CSS -->
   <link rel="stylesheet" href="./assets/css/style.css">
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
-  <!-- Font Awesome -->
-   
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <!-- Favicon -->
   <link id='favicon' rel="shortcut icon" href="./assets/images/dev.jpeg" type="image/x-png">
   <title>Portfolio | Patrick</title>
+
+  <style>
+    /* ============================================
+       HERO — FOND CLAIR ET LISIBLE
+    ============================================ */
+    .home {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, #0d1b4b 0%, #102060 40%, #1a0a3d 100%) !important;
+      background-color: #0d1b4b !important;
+    }
+
+    #particles-js {
+      position: absolute !important;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: 0;
+      background: transparent;
+      opacity: 0.75;
+    }
+
+    .home .content,
+    .home .image,
+    .home .socials {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Titre hero blanc pur */
+    .home .content h2 {
+      font-size: 4.6rem;
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.25;
+      text-shadow: 0 2px 18px rgba(0,0,0,0.45);
+    }
+    .home .content h2 span {
+      font-size: 4.6rem;
+      color: #f68c09;
+      font-weight: 800;
+    }
+
+    .home .content p {
+      font-size: 2.2rem;
+      color: #d0e4ff;
+      font-weight: 600;
+      padding: 0.8rem 0;
+    }
+    .home .content p span {
+      font-size: 2.2rem;
+      color: #ff9f55;
+      font-weight: 700;
+    }
+
+    .home .btn {
+      margin-top: 1rem;
+      background: linear-gradient(135deg, #2756f5, #8b2be2);
+      box-shadow: 0 6px 24px rgba(39, 86, 245, 0.55);
+      border: none;
+      transition: all 0.3s ease;
+    }
+    .home .btn:hover {
+      background: linear-gradient(135deg, #1a3fd0, #6c1eb5);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(39, 86, 245, 0.65);
+    }
+
+    /* ============================================
+       SOCIAL ICONS
+    ============================================ */
+    .social-icons a {
+      background-color: rgba(255,255,255,0.1);
+      border: 1.5px solid rgba(255,255,255,0.2);
+      color: #d0e4ff;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(4px);
+    }
+    .social-icons a:hover {
+      transform: translateY(-5px);
+      border-color: transparent;
+      color: #fff;
+    }
+    .social-icons a.linkedin:hover  { background: #0077b5; box-shadow: 0 8px 20px rgba(0,119,181,0.5); }
+    .social-icons a.github:hover    { background: #24292e; box-shadow: 0 8px 20px rgba(36,41,46,0.5); }
+    .social-icons a.instagram:hover { background: linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); box-shadow: 0 8px 20px rgba(220,39,67,0.5); }
+    .social-icons a.facebook:hover  { background: #1877f2; box-shadow: 0 8px 20px rgba(24,119,242,0.5); }
+
+    /* ============================================
+       IMAGE HERO — PULSE ANIMATION
+    ============================================ */
+    @keyframes pulseRing {
+      0%   { box-shadow: 0 0 0 0 rgba(39,86,245,0.45), 0 0 30px rgba(39,86,245,0.3); }
+      70%  { box-shadow: 0 0 0 14px rgba(39,86,245,0), 0 0 30px rgba(39,86,245,0.3); }
+      100% { box-shadow: 0 0 0 0 rgba(39,86,245,0), 0 0 30px rgba(39,86,245,0.3); }
+    }
+    .home .image img {
+      border: 3px solid rgba(255,255,255,0.18);
+      animation: pulseRing 2.8s ease-out infinite;
+      transition: all 0.4s ease;
+    }
+    .home .image img:hover {
+      animation: none;
+      box-shadow: 0 0 50px rgba(246,140,9,0.5), 0 0 0 8px rgba(246,140,9,0.12);
+      border-color: rgba(246,140,9,0.5);
+    }
+
+    /* ============================================
+       NAVBAR
+    ============================================ */
+    header {
+      background: rgba(5, 10, 35, 0.97) !important;
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    header .logo { color: #d0e4ff; }
+    header .logo:hover { color: #f68c09; }
+    header .navbar ul li a { color: #9fb8e8; }
+    header .navbar ul li a.active,
+    header .navbar ul li a:hover { color: #f68c09; border-bottom-color: #f68c09; }
+
+    /* ============================================
+       ABOUT — BADGE
+    ============================================ */
+    .about .row .content .tag {
+      display: inline-block;
+      background: linear-gradient(135deg, #2756f5, #8b2be2);
+      color: #fff;
+      font-size: 1.25rem;
+      padding: 0.45rem 1.5rem;
+      border-radius: 3rem;
+      font-weight: 600;
+      letter-spacing: 0.05rem;
+      box-shadow: 0 0 18px rgba(139,43,226,0.45);
+      margin-top: 0.8rem;
+    }
+
+    /* ============================================
+       SKILLS
+    ============================================ */
+    .skills {
+      background: linear-gradient(160deg, #07051a 0%, #0d1540 50%, #1a0a30 100%);
+    }
+    .skills h2 { color: #fff; }
+    .skills .heading span { color: #f68c09; }
+
+    .skills .container {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      backdrop-filter: blur(10px);
+    }
+    .skills .container .bar {
+      background: rgba(255,255,255,0.06) !important;
+      border: 1px solid rgba(255,255,255,0.1);
+      transition: all 0.3s ease;
+    }
+    .skills .container .bar:hover {
+      background: rgba(39,86,245,0.15) !important;
+      border-color: rgba(39,86,245,0.4);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(39,86,245,0.2) !important;
+    }
+    .skills .container .bar .info span { color: #d0e4ff; }
+
+    .chart-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 2rem;
+      padding: 2rem;
+    }
+    #skillsChart {
+      width: 380px !important;
+      height: 380px !important;
+      max-width: 90vw !important;
+    }
+
+    /* ============================================
+       EDUCATION
+    ============================================ */
+    .education { background: #f0f4ff; }
+    .education .box-container .box {
+      border-left: 5px solid #2756f5;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+    .education .box-container .box:hover {
+      border-left-color: #f68c09;
+      transform: translateX(6px) scale(1.01);
+      box-shadow: 0 8px 30px rgba(39,86,245,0.2);
+    }
+    .education .box-container .box .content h3 { color: #0d1b4b; }
+    .education h4 { color: #1a8a00; }
+
+    /* ============================================
+       TIMELINE
+    ============================================ */
+    .experience {
+      background: linear-gradient(160deg, #07051a 0%, #0e0d30 60%, #120820 100%);
+    }
+    .experience h2.heading { color: #fff; }
+    .experience .heading span { color: #f68c09; }
+    .experience .timeline::after {
+      background: linear-gradient(to bottom, #2756f5, #8b2be2);
+    }
+    .experience .content {
+      background: linear-gradient(135deg, #f68c09, #d97500);
+      box-shadow: 0 6px 20px rgba(246,140,9,0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .experience .container:hover .content {
+      transform: scale(1.02);
+      box-shadow: 0 10px 30px rgba(246,140,9,0.45);
+    }
+    .experience .content .tag h2 { color: #fff; font-size: 1.55rem; }
+    .experience .content .desc h3 { color: #1a0500; }
+    .experience .content .desc p  { color: #2a0a00; font-weight: 600; }
+    .experience .content .desc small {
+      color: #1a0500;
+      font-family: "Nunito", sans-serif;
+      font-size: 1.25rem;
+      line-height: 1.6;
+    }
+
+    /* ============================================
+       CONTACT
+    ============================================ */
+    .contact { background: #f0f4ff; }
+    .contact .container {
+      box-shadow: 0 8px 40px rgba(39,86,245,0.15);
+      border: 1px solid rgba(39,86,245,0.1);
+    }
+    .button-area button {
+      background: linear-gradient(135deg, #2756f5, #8b2be2);
+      box-shadow: 0 5px 18px rgba(39,86,245,0.45);
+      transition: all 0.3s ease;
+      font-weight: 700;
+    }
+    .button-area button:hover {
+      background: linear-gradient(135deg, #1a3fd0, #6c1eb5);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(39,86,245,0.6);
+    }
+    .field input:focus, .message textarea:focus { border-color: #2756f5; }
+    .field input:focus ~ i, .message textarea:focus ~ i { color: #2756f5; }
+
+    /* ============================================
+       FOOTER
+    ============================================ */
+    .footer {
+      background: linear-gradient(160deg, #07051a, #12003a) !important;
+      background-image: none !important;
+    }
+    .footer .box-container .box .share a {
+      background: rgba(255,255,255,0.12);
+      color: #d0e4ff;
+      border: 1.5px solid rgba(255,255,255,0.15);
+    }
+    .footer .box-container .box .share a:hover {
+      background: #f68c09;
+      color: #fff;
+      border-color: transparent;
+    }
+
+    /* ============================================
+       SCROLL TOP
+    ============================================ */
+    #scroll-top {
+      background: linear-gradient(135deg, #2756f5, #8b2be2);
+      color: #fff;
+      box-shadow: 0 4px 18px rgba(39,86,245,0.5);
+    }
+    #scroll-top:hover { background: linear-gradient(135deg, #f68c09, #d97500); }
+
+    /* ============================================
+       RESUME BUTTON
+    ============================================ */
+    .resumebtn .btn {
+      background: linear-gradient(135deg, #2756f5, #8b2be2);
+      box-shadow: 0 5px 18px rgba(39,86,245,0.45);
+      transition: all 0.3s ease;
+    }
+    .resumebtn .btn:hover {
+      background: linear-gradient(135deg, #1a3fd0, #6c1eb5);
+      transform: translateY(-2px);
+    }
+
+    /* Typed cursor */
+    .typed-cursor { color: #f68c09; font-size: 2.2rem; }
+  </style>
 </head>
 
 <body oncontextmenu="return false">
 
-  <!-- pre loader -->
-   <!--div class="loader-container">
-  <img draggable="false" src="./assets/images/preloader.gif" alt="">
-</div> 
-
-  <!-- navbar starts -->
+  <!-- navbar -->
   <header>
     <a href="/" class="logo"><i class="fab fa-react"></i> Patrick RALALANIRINA</a>
-
     <div id="menu" class="fas fa-bars"></div>
     <nav class="navbar">
       <ul>
@@ -45,354 +323,208 @@
       </ul>
     </nav>
   </header>
-  <!-- navbar ends -->
 
-
-  <!-- hero section starts -->
+  <!-- hero -->
   <section class="home" id="home">
-    <!--div id="particles-js"></div-->
+    <div id="particles-js"></div>
 
     <div class="content">
-      <h2>Hi There👋👋,<br /> bienvenu<span> dans mon portfolio</span></h2>
+      <h2>Hi There 👋,<br />bienvenu<span> dans mon portfolio</span></h2>
       <p>I'm a <span class="typing-text"></span></p>
-      <a href="#about" class="btn"><span>About Me</span>
+      <a href="#about" class="btn">
+        <span>About Me</span>
         <i class="fas fa-arrow-circle-down"></i>
       </a>
       <div class="socials">
         <ul class="social-icons">
-          <li><a class="linkedin" aria-label="LinkedIn" href="https://www.linkedin.com/in/patrick-ralalanirina/"
-              target="_blank"><i class="fab fa-linkedin"></i></a></li>
-          <li><a class="github" aria-label="GitHub" href="https://github.com/Patrick52177" target="_blank"><i
-                class="fab fa-github"></i></a></li>
-          <li><a class="instagram" aria-label="Instagram" href="https://www.instagram.com/patrick.ralnir/"><i
-                class="fab fa-instagram" target="_blank"></i></a></li>
-          <li><a class="facebook" aria-label="facebook" href="https://www.facebook.com/Patrick.ralalanirina?locale=fr_FR"><i
-                class="fab fa-facebook" target="_blank"></i></a></li>
-      
+          <li><a class="linkedin" aria-label="LinkedIn" href="https://www.linkedin.com/in/patrick-ralalanirina/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+          <li><a class="github" aria-label="GitHub" href="https://github.com/Patrick52177" target="_blank"><i class="fab fa-github"></i></a></li>
+          <li><a class="instagram" aria-label="Instagram" href="https://www.instagram.com/patrick.ralnir/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+          <li><a class="facebook" aria-label="Facebook" href="https://www.facebook.com/Patrick.ralalanirina?locale=fr_FR" target="_blank"><i class="fab fa-facebook"></i></a></li>
         </ul>
       </div>
     </div>
     <div class="image">
-      <img draggable="false" class="tilt" src="./assets/images/code.jpg" alt="">
+      <img draggable="false" class="tilt" src="./assets/images/code.jpg" alt="Patrick coding">
     </div>
   </section>
-  <!-- hero section ends -->
 
-
-  <!-- about section starts -->
+  <!-- about -->
   <section class="about" id="about">
-    <h2 class="heading"><i class="fas fa-user-alt"></i> About <span style="color:rgb(24, 37, 218);">Me</span></h2>
-
+    <h2 class="heading"><i class="fas fa-user-alt"></i> About <span style="color:#2756f5;">Me</span></h2>
     <div class="row">
-
       <div class="image">
-        <img draggable="false" class="tilt" src="./assets/images/dev.png" alt="">
+        <img draggable="false" class="tilt" src="./assets/images/dev.png" alt="Patrick">
       </div>
       <div class="content">
         <h3>Patrick RALALANIRINA</h3>
         <span class="tag">Full Stack Developer</span>
-
-        <p>Développeur full-stack junior passionné par les systèmes embarqués, 
-          je cherche à intégrer une équipe dynamique pour mettre en pratique mes compétences en programmation. 
-          Mon objectif est de contribuer à des projets innovants tout en approfondissant mes connaissances en Iot
-           et développement web </p>
-
+        <p>Développeur full-stack junior passionné par les systèmes embarqués,
+          je cherche à intégrer une équipe dynamique pour mettre en pratique mes compétences en programmation.
+          Mon objectif est de contribuer à des projets innovants tout en approfondissant mes connaissances en IoT
+          et développement web.</p>
         <div class="box-container">
           <div class="box">
-            <p><span> age: </span> 22</p>
+            <p><span> age : </span> 22</p>
             <p><span> phone : </span> +261 34 20 323 56</p>
- 
             <p><span> email : </span> patrickralalanirina521@gmail.com</p>
             <p><span> place : </span> III S 353 A Madera Namontana</p>
           </div>
         </div>
-
         <div class="resumebtn">
           <a href="assets/DevFolio.pdf" class="btn"><span>Resume</span>
             <i class="fas fa-chevron-right"></i>
           </a>
         </div>
-
       </div>
     </div>
   </section>
-  <!-- about section ends -->
 
-  <!-- skills section starts -->
+  <!-- skills -->
   <section class="skills" id="skills">
-
-    <h2 class="heading"><i class="fas fa-laptop-code"></i> Skills & <span>Abilities</span></h2>
+    <h2 class="heading"><i class="fas fa-laptop-code"></i> Skills &amp; <span>Abilities</span></h2>
     <div class="container">
-      <div class="row" id="skillsContainer">
-
-
-      </div>
+      <div class="row" id="skillsContainer"></div>
     </div>
-    <center>
-     <canvas id="skillsChart"></canvas>
-    </center>
+    <div class="chart-wrapper">
+      <canvas id="skillsChart"></canvas>
+    </div>
   </section>
-  <!-- skills section ends -->
 
-
-  <!-- education section starts -->
+  <!-- education -->
   <section class="education" id="education">
-
     <h1 class="heading"><i class="fas fa-graduation-cap"></i> My <span>Education</span></h1>
-
     <p class="qoute">Education is not the learning of facts, but the training of the mind to think.</p>
-
     <div class="box-container">
-
       <div class="box">
-        <div class="image">
-          <img draggable="false" src="./assets/images/Univ.jpg" alt="">
-        </div>
+        <div class="image"><img draggable="false" src="./assets/images/Univ.jpg" alt="Université"></div>
         <div class="content">
-          <h3>Licence d’Ingénierie en Physique des Signaux et Systèmes</h3>
+          <h3>Licence d'Ingénierie en Physique des Signaux et Systèmes</h3>
           <p>Univérsité d'Antananarivo</p>
           <h4>2022-2025 | Pursuing</h4>
         </div>
       </div>
-
       <div class="box">
-        <div class="image">
-          <img draggable="false" src="./assets/images/college.jpg" alt="">
-        </div>
+        <div class="image"><img draggable="false" src="./assets/images/college.jpg" alt="Lycée"></div>
         <div class="content">
           <h3>Baccalauréat Série D</h3>
           <p>Lycée Moderne Ampefiloha</p>
           <h4>2017-2020 | Completed</h4>
         </div>
       </div>
-
     </div>
   </section>
-  <!-- education section ends -->
 
-
-  <!-- work project section starts -->
-  <section class="experience" id="experience">
-
-  <h2 class="heading">
-    <i class="fas fa-laptop-code"></i> Projets
-  </h2>
-
-  <div class="timeline">
-
-    <!-- Projet bancaire -->
-    <div class="container left">
-      <div class="content">
-        <div class="tag">
-          <h2>Application de gestion</h2>
-        </div>
-        <div class="desc">
-          <h3>ASP.NET Core • Oracle</h3>
-          <p>
-            Application de simulation et d’analyse de crédits bancaires avec
-            indicateurs de rentabilité et tableaux de bord.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Agence de voyage -->
-    <div class="container right">
-      <div class="content">
-        <div class="tag">
-          <h2>Agence de voyage</h2>
-        </div>
-        <div class="desc">
-          <h3>Next.js • NestJS • MySQL</h3>
-          <p>
-            Application web pour la gestion des circuits touristiques,
-            réservations et demandes clients.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Distributeur automatique -->
-    <div class="container left">
-      <div class="content">
-        <div class="tag">
-          <h2>Distributeur automatique de boisson</h2>
-        </div>
-        <div class="desc">
-          <h3>Arduino • LCD • Capteurs</h3>
-          <p>
-            Système embarqué simulant la distribution de boissons avec menu LCD,
-            boutons de navigation et capteur à ultrasons.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Maison intelligente -->
-    <div class="container right">
-      <div class="content">
-        <div class="tag">
-          <h2>Maison intelligente</h2>
-        </div>
-        <div class="desc">
-          <h3>Arduino • IoT</h3>
-          <p>
-            Système de contrôle intelligent pour l’éclairage et les équipements
-            domestiques à l’aide de capteurs et d’automatisation.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Portfolio -->
-    <div class="container left">
-      <div class="content">
-        <div class="tag">
-          <h2>Portfolio personnel</h2>
-        </div>
-        <div class="desc">
-          <h3>HTML • CSS • JavaScript</h3>
-          <p>
-            Portfolio responsive présentant mes compétences, projets et
-            expériences professionnelles.
-          </p>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-</section>
-
-
-      <!-- <div class="box tilt">
-      <img draggable="false" src="./assets/images/projects/portfolio1.PNG" alt="" />
-      <div class="content">
-        <div class="tag">
-        <h3>Portfolio Website</h3>
-        </div>
-        <div class="desc">
-          <p>Personal portfolio website. Don't need much info about it, just scroll down. You're here only!</p>
-          <div class="btns">
-            <a href="#" class="btn" target="_blank"><i class="fas fa-eye"></i> View</a>
-            <a href="https://github.com/jigar-sable/Portfolio-Website" class="btn" target="_blank">Code <i class="fas fa-code"></i></a>
+  <!-- projets -->
+  <section class="experience" id="work">
+    <h2 class="heading"><i class="fas fa-laptop-code"></i> Projets</h2>
+    <div class="timeline">
+      <div class="container left">
+        <div class="content">
+          <div class="tag"><h2>Application de gestion</h2></div>
+          <div class="desc">
+            <h3>ASP.NET Core • Oracle</h3>
+            <p>Application de simulation et d'analyse de crédits bancaires avec indicateurs de rentabilité et tableaux de bord.</p>
           </div>
         </div>
       </div>
-    </div> -->
-
+      <div class="container right">
+        <div class="content">
+          <div class="tag"><h2>Agence de voyage</h2></div>
+          <div class="desc">
+            <h3>Next.js • NestJS • MySQL</h3>
+            <p>Application web pour la gestion des circuits touristiques, réservations et demandes clients.</p>
+          </div>
+        </div>
+      </div>
+      <div class="container left">
+        <div class="content">
+          <div class="tag"><h2>Distributeur automatique de boisson</h2></div>
+          <div class="desc">
+            <h3>Arduino • LCD • Capteurs</h3>
+            <p>Système embarqué simulant la distribution de boissons avec menu LCD et capteur à ultrasons.</p>
+          </div>
+        </div>
+      </div>
+      <div class="container right">
+        <div class="content">
+          <div class="tag"><h2>Maison intelligente</h2></div>
+          <div class="desc">
+            <h3>Arduino • IoT</h3>
+            <p>Système de contrôle pour l'éclairage et équipements domestiques via capteurs et automatisation.</p>
+          </div>
+        </div>
+      </div>
+      <div class="container left">
+        <div class="content">
+          <div class="tag"><h2>Portfolio personnel</h2></div>
+          <div class="desc">
+            <h3>HTML • CSS • JavaScript</h3>
+            <p>Portfolio responsive présentant mes compétences, projets et expériences professionnelles.</p>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <!-- div class="viewall">
-      <a href="./projects/index.html" class="btn"><span>View All</span>
-        <i class="fas fa-arrow-right"></i>
-      </a>
-    </div -->
-
   </section>
-  <!-- work project section ends -->
 
-  <!-- experience section starts -->
+  <!-- expérience -->
   <section class="experience" id="experience">
-
-  <h2 class="heading">
-    <i class="fas fa-briefcase"></i> Expérience
-  </h2>
-
-  <div class="timeline">
-
-    <!-- Caisse d'Épargne de Madagascar -->
-    <div class="container right">
-      <div class="content">
-        <div class="tag">
-          <h2>Caisse d’Épargne de Madagascar</h2>
+    <h2 class="heading"><i class="fas fa-briefcase"></i> Expérience</h2>
+    <div class="timeline">
+      <div class="container right">
+        <div class="content">
+          <div class="tag"><h2>Caisse d'Épargne de Madagascar</h2></div>
+          <div class="desc">
+            <h3>Développeur .NET / Oracle</h3>
+            <p>2025</p>
+            <small>Contribution au développement d'une application bancaire interne : simulation et analyse de crédits, tableaux de bord et indicateurs de rentabilité.</small>
+          </div>
         </div>
-        <div class="desc">
-          <h3>Développeur .NET / Oracle</h3>
-          <p>2025</p>
-          <small>
-            Contribution au développement d’une application bancaire interne :
-            simulation et analyse de crédits, tableaux de bord et indicateurs
-            de rentabilité.
-          </small>
+      </div>
+      <div class="container left">
+        <div class="content">
+          <div class="tag"><h2>Agence de Voyage</h2></div>
+          <div class="desc">
+            <h3>Développeur Web Full Stack</h3>
+            <p>2024 – 2025</p>
+            <small>Développement et maintenance d'une application web de gestion de circuits, réservations et contacts clients.</small>
+          </div>
+        </div>
+      </div>
+      <div class="container right">
+        <div class="content">
+          <div class="tag"><h2>Développement Web</h2></div>
+          <div class="desc">
+            <h3>Développeur Full Stack Junior</h3>
+            <p>2023 – Présent</p>
+            <small>Conception d'applications web modernes, intégration d'API, gestion de bases de données et utilisation de Git.</small>
+          </div>
         </div>
       </div>
     </div>
-
-    <!-- Agence de voyage -->
-    <div class="container left">
-      <div class="content">
-        <div class="tag">
-          <h2>Agence de Voyage</h2>
-        </div>
-        <div class="desc">
-          <h3>Développeur Web Full Stack</h3>
-          <p>2024 – 2025</p>
-          <small>
-            Développement et maintenance d’une application web de gestion
-            de circuits, réservations et contacts clients.
-          </small>
-        </div>
-      </div>
-    </div>
-
-    <!-- Expérience générale -->
-    <div class="container right">
-      <div class="content">
-        <div class="tag">
-          <h2>Expérience en développement web</h2>
-        </div>
-        <div class="desc">
-          <h3>Développeur Full Stack Junior</h3>
-          <p>2023 – Présent</p>
-          <small>
-            Conception d’applications web modernes, intégration d’API,
-            gestion de bases de données et utilisation de Git.
-          </small>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-
-
-
-    <!-- div class="morebtn">
-      <a href="experience/index.html" class="btn"><span>View All</span>
-        <i class="fas fa-arrow-right"></i>
-      </a>
-    </div>
-
-    </div -->
-
   </section>
-  <!-- experience section ends -->
 
-  <!-- contact section starts -->
+  <!-- contact -->
   <section class="contact" id="contact">
-
     <h2 class="heading"><i class="fas fa-headset"></i> Get in <span>Touch</span></h2>
-
     <div class="container">
       <div class="content">
         <div class="image-box">
-          <img draggable="false" src="./assets/images/contact1.png" alt="">
+          <img draggable="false" src="./assets/images/contact1.png" alt="contact">
         </div>
         <form id="contact-form">
-
           <div class="form-group">
             <div class="field">
               <input type="text" name="name" placeholder="Name" required>
-              <i class='fas fa-user'></i>
+              <i class="fas fa-user"></i>
             </div>
             <div class="field">
               <input type="text" name="email" placeholder="Email" required>
-              <i class='fas fa-envelope'></i>
+              <i class="fas fa-envelope"></i>
             </div>
             <div class="field">
               <input type="text" name="phone" placeholder="Phone">
-              <i class='fas fa-phone-alt'></i>
+              <i class="fas fa-phone-alt"></i>
             </div>
             <div class="message">
               <textarea placeholder="Message" name="message" required></textarea>
@@ -400,27 +532,20 @@
             </div>
           </div>
           <div class="button-area">
-            <button type="submit">
-              Submit <i class="fa fa-paper-plane"></i></button>
+            <button type="submit">Submit <i class="fa fa-paper-plane"></i></button>
           </div>
         </form>
       </div>
     </div>
   </section>
-  <!-- contact section ends -->
 
-
-  <!-- footer section starts -->
+  <!-- footer -->
   <section class="footer">
-
     <div class="box-container">
-
       <div class="box">
         <h3>Dev's Portfolio</h3>
-        <p>Thank you for visiting my personal portfolio website. Connect with me over socials. <br /> <br /> Keep Rising
-          🚀. Connect with me over live chat!</p>
+        <p>Thank you for visiting my personal portfolio website. Connect with me over socials.<br /><br />Keep Rising 🚀</p>
       </div>
-
       <div class="box">
         <h3>quick links</h3>
         <a href="#home"><i class="fas fa-chevron-circle-right"></i> home</a>
@@ -430,88 +555,130 @@
         <a href="#work"><i class="fas fa-chevron-circle-right"></i> work</a>
         <a href="#experience"><i class="fas fa-chevron-circle-right"></i> experience</a>
       </div>
-
       <div class="box">
         <h3>contact info</h3>
-        <p> <i class="fas fa-phone"></i> +261 34 20 323 56</p>
-        <p> <i class="fas fa-envelope"></i> patrickralalanirina521@gmail.com</p>
-        <p> <i class="fas fa-map-marked-alt"></i>III S 353 A Madera Namontana</p>
+        <p><i class="fas fa-phone"></i> +261 34 20 323 56</p>
+        <p><i class="fas fa-envelope"></i> patrickralalanirina521@gmail.com</p>
+        <p><i class="fas fa-map-marked-alt"></i> III S 353 A Madera Namontana</p>
         <div class="share">
-
-          <a href="https://www.linkedin.com/in/patrick-ralalanirina/" class="fab fa-linkedin" aria-label="LinkedIn"
-            target="_blank"></a>
+          <a href="https://www.linkedin.com/in/patrick-ralalanirina/" class="fab fa-linkedin" aria-label="LinkedIn" target="_blank"></a>
           <a href="https://github.com/Patrick52177" class="fab fa-github" aria-label="GitHub" target="_blank"></a>
-          <a href="mailto:patrickralalanirina521@gmail.com" class="fas fa-envelope" aria-label="Mail" target="_blank"></a>
+          <a href="mailto:patrickralalanirina521@gmail.com" class="fas fa-envelope" aria-label="Mail"></a>
         </div>
       </div>
     </div>
-
-    <h1 class="credit">Designed with <i class="fa fa-heart pulse"></i> by <a href="https://github.com/Patrick52177">
-        Patrick</a></h1>
-
+    <h1 class="credit">Designed with <i class="fa fa-heart pulse"></i> by <a href="https://github.com/Patrick52177">Patrick</a></h1>
   </section>
-  <!-- footer section ends -->
 
-
-  <!-- scroll top btn -->
   <a href="#home" aria-label="ScrollTop" class="fas fa-angle-up" id="scroll-top"></a>
-  <!-- scroll back to top -->
 
-
-  <!-- ==== ALL MAJOR JAVASCRIPT CDNS STARTS ==== -->
-  <!-- jquery cdn -->
+  <!-- ===== JS CDNs ===== -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
     integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-    <script src="https://unpkg.com/scrollreveal"></script>
-
-
-  <!-- typed.js cdn -->
+  <script src="https://unpkg.com/scrollreveal"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.5/typed.min.js"
     integrity="sha512-1KbKusm/hAtkX5FScVR5G36wodIMnVd/aP04af06iyQTkD17szAMGNmxfNH+tEuFp3Og/P5G32L1qEC47CZbUQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-  <!-- particle.js links -->
   <script src="./assets/js/particles.min.js"></script>
-  <script src="./assets/js/app.js"></script>
-
-  <!-- vanilla tilt.js links -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"
     integrity="sha512-SttpKhJqONuBVxbRcuH0wezjuX+BoFoli0yPsnrAADcHsQMW8rkR84ItFHGIkPvhnlRnE2FaifDOUw+EltbuHg=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-  <!-- scroll reveal anim -->
-  <script src="https://unpkg.com/scrollreveal"></script>
-
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-  <!-- ==== ALL MAJOR JAVASCRIPT CDNS ENDS ==== -->
+  <!-- ===== PARTICLES — CLAIRES ET DISCRÈTES ===== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      particlesJS('particles-js', {
+        particles: {
+          number: { value: 55, density: { enable: true, value_area: 850 } },
+          /* Couleurs claires sur fond bleu nuit */
+          color: { value: ["#7eb3ff", "#ffffff", "#ffb36b", "#a78bfa"] },
+          shape: { type: "circle", stroke: { width: 0, color: "#000" } },
+          opacity: {
+            value: 0.6, random: true,
+            anim: { enable: true, speed: 0.8, opacity_min: 0.2, sync: false }
+          },
+          size: {
+            value: 3.5, random: true,
+            anim: { enable: false }
+          },
+          line_linked: {
+            enable: true,
+            distance: 140,
+            color: "#7eb3ff",
+            opacity: 0.18,  /* lignes très discrètes */
+            width: 1
+          },
+          move: {
+            enable: true, speed: 1.8,
+            direction: "none", random: true,
+            straight: false, out_mode: "out",
+            attract: { enable: false }
+          }
+        },
+        interactivity: {
+          detect_on: "canvas",
+          events: {
+            onhover: { enable: true, mode: "grab" },
+            onclick: { enable: true, mode: "push" },
+            resize: true
+          },
+          modes: {
+            grab: { distance: 160, line_linked: { opacity: 0.6 } },
+            push: { particles_nb: 3 }
+          }
+        },
+        retina_detect: true
+      });
+    });
+  </script>
 
+  <!-- ===== SCRIPTS PRINCIPAUX ===== -->
+  <script src="./assets/js/app.js"></script>
   <script src="./assets/js/script.js"></script>
 
-   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script>    document.addEventListener('DOMContentLoaded', function() {
+  <!-- ===== SKILLS CHART ===== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
       const ctx = document.getElementById('skillsChart');
       new Chart(ctx, {
         type: 'doughnut',
         data: {
-          labels: ['JavaScript', 'Java','C#', 'PHP', 'HTML/CSS', 'SCSS'],
+          labels: ['JavaScript', 'Java', 'C#', 'PHP', 'HTML/CSS', 'SCSS'],
           datasets: [{
             data: [39, 40, 35, 30, 26, 8],
-            backgroundColor: [
-               '#f1e05a', // JavaScript
-        '#b07219', // Java (couleur officielle)
-        '#178600', // C# (couleur GitHub)
-        '#4F5D95', // PHP (couleur officielle)
-        '#e34c26', // HTML/CSS
-        '#cc6699'  // SCSS
-            ]
+            backgroundColor: ['#f1e05a', '#b07219', '#178600', '#4F5D95', '#e34c26', '#cc6699'],
+            borderColor: 'rgba(255,255,255,0.12)',
+            borderWidth: 3,
+            hoverOffset: 10
           }]
+        },
+        options: {
+          responsive: false,
+          cutout: '62%',
+          plugins: {
+            legend: {
+              position: 'right',
+              labels: {
+                color: '#d0e4ff',
+                font: { size: 13, family: 'Poppins', weight: '600' },
+                padding: 20,
+                usePointStyle: true,
+                pointStyleWidth: 12
+              }
+            },
+            tooltip: {
+              callbacks: {
+                label: ctx => ` ${ctx.label} : ${ctx.parsed}%`
+              }
+            }
+          }
         }
       });
-    })</script>
+    });
+  </script>
 
 </body>
-
 </html>
